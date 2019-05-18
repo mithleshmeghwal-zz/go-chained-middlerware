@@ -1,0 +1,14 @@
+version: '3'
+services:
+  server:
+    build: .
+    volumes:
+      - .:/go/src/server
+    environment:
+      - ADDR=8080
+    ports:
+      - "80:8080"
+    networks: 
+      - backend
+networks:
+  backend:
